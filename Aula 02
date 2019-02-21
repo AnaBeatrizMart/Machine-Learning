@@ -19,3 +19,38 @@ library(dplyr)
 
 # Verifica os primeiros casos
 head(iris)
+
+# Tirando algumas estatisticas descritivas
+summary(iris$Sepal.Length)
+summary(iris$Petal.Length)
+
+# Elaborar um grafico de dispersão com as variaveis de interesse
+
+plot(x=iris$Sepal.Length, y=iris$Petal.Length, col="#40E0D0")
+# A medida que aumenta o tamanho da sepala tbm aumenta o tamanho da pétala
+
+# Correlação
+cor(x=iris$Sepal.Length, y=iris$Petal.Length)
+# [1] 0.8717538 - estão fortemente correlacionadas
+
+# Montando um modelo de regressão linear
+
+reg = lm(Petal.Length ~ Sepal.Length, data = iris)
+summary (reg)
+# [B0] O valor do tamanho da sepala é igual a -7.10 
+# B0 -7.10 é o valor esperado de Y quando o X=0
+
+# B1 é a inclinação da reta
+# [B1] Efeito de X sobre Y 1.85843
+# B1 para cada aumento de uma unidade no X eu tenho um aumento de B1 (1.86) em X
+
+# Plotando a reta de regressão facil usando pacote ggplot2
+# install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Length,
+                 y = Petal.Length,
+                 col = "#FA8072")) + 
+  geom_point() + 
+  stat_smooth(method = "lm")
+
