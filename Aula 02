@@ -1,0 +1,21 @@
+#################################
+## Machine Learning
+## Izabela Hendrix
+## Aula 02 
+## Prof. Neylson Crepalde
+## Por Ana Beatriz Martins
+#################################
+
+install.packages("dplyr")
+library(dplyr)
+
+##################################
+
+# Vamos investigar a relação ente as variáveis 
+# Sepal.Length e Petal.Lenght no banco
+# de dados Iris
+
+# data("iris")
+
+# Verifica os primeiros casos
+head(iris)
