@@ -1,0 +1,146 @@
+## Esta questão envolve o uso de regressão linear simples no Auto conjunto de dados.  
+
+## (a) Use a função lm () para executar uma regressão linear simples com mpg como a resposta e potência como o preditor.  
+
+## Use o função summary () para imprimir os resultados. Comente a saída.
+## Por exemplo: 122 3. Regressão Linear Eu. Existe uma relação entre o preditor e a resposta?  
+
+## ii. Quão forte é a relação entre o preditor e a resposta?  
+
+## iii. É a relação entre o preditor e a resposta positivo ou negativo?  
+
+## iv. Qual é o mpg previsto associado a uma potência de 98? Quais são os 95% de confiança e previsão associados? intervalos?  
+
+## (b) Plote a resposta e o preditor. Use a função abline () para exibir a linha de regressão de mínimos quadrados.  
+
+## (c) Use a função plot () para produzir plotagens de diagnóstico das ajuste de regressão de praças. Comente sobre quaisquer problemas que você vir com o ajuste. 
+
+#########################################################################################################################################
+
+
+## 9. Esta questão envolve o uso de regressão linear múltipla na
+##  Conjunto de dados automático.
+
+## (a) Produzir uma matriz de dispersão que inclua todas as variáveis
+## no conjunto de dados.
+
+## (b) Calcule a matriz de correlações entre as variáveis ​​usando
+## a função cor (). Você precisará excluir a variável de nome, cor (), que é qualitativa.
+
+## (c) Use a função lm () para executar uma regressão linear múltipla
+## com mpg como a resposta e todas as outras variáveis, exceto nome como
+## os preditores. Use a função summary () para imprimir os resultados.
+## Comente a saída. Por exemplo:
+## Eu. Existe uma relação entre os preditores e a resposta?
+
+## ii. Quais preditores parecem ter um significado estatisticamente
+## relação com a resposta?
+iii. O que sugere o coeficiente da variável ano?
+(d) Use a função plot () para produzir plotagens de diagnóstico
+ajuste de regressão. Comente sobre quaisquer problemas que você vir com o ajuste.
+Os gráficos residuais sugerem algum valor atípico extraordinariamente grande? Faz
+o gráfico de alavancagem identifica quaisquer observações com
+alavancagem?
+
+#########################################################################################################################################
+
+## 10. Esta questão deve ser respondida usando o conjunto de dados do Carseats.
+
+## (a) ajustar um modelo de regressão múltipla para prever vendas usando preço,
+Urbano e EUA.
+
+## (b) Forneça uma interpretação de cada coeficiente no modelo. Estar
+## cuidado - algumas das variáveis ​​do modelo são qualitativas!
+
+## (c) Escreva o modelo na forma de equação, tomando cuidado para
+## as variáveis ​​qualitativas corretamente.
+
+## (d) Para qual dos preditores você pode rejeitar a hipótese nula
+H0: βj = 0?
+
+## (e) Com base na sua resposta à pergunta anterior, ajuste um
+modelo menor que usa apenas os preditores para os quais existe
+evidência de associação com o desfecho.
+
+## (f) Quão bem os modelos em (a) e (e) se ajustam aos dados?
+
+## (g) Usando o modelo de (e), obtenha intervalos de confiança de 95% para
+coeficiente (s).
+
+## (h) Existe evidência de outliers ou observações de alta alavancagem no
+modelo de (e)?
+
+########################################################################
+
+## Neste exercício, você criará alguns dados simulados e se ajustará a
+## modelos de regressão linear para ele. Certifique-se de usar set.seed (1) antes de
+## parte inicial (a) para garantir resultados consistentes.
+## (a) Usando a função rnorm (), crie um vetor, x, contendo 100
+## observações extraídas de uma distribuição N (0, 1). Isto representa
+## um recurso, X.
+
+## (b) Usando a função rnorm (), crie um vetor, eps, contendo 100
+## observações extraídas de uma distribuição N (0, 0,25), isto é, uma
+## distribuição com média zero e variância 0,25.
+
+## (c) Usando x e eps, gere um vetor y de acordo com o modelo
+## Y = -1 + 0,5X +. (3,39)
+## Qual é o comprimento do vetor y? Quais são os valores de β0
+## e β1 neste modelo linear?
+
+## (d) Crie um gráfico de dispersão exibindo a relação entre xe
+## y. Comente o que você observa.
+## (e) Ajuste um modelo linear de mínimos quadrados para prever y usando x. Comente
+## no modelo obtido. Como βˆ0 e βˆ1 se comparam a β0 e
+## β1?
+
+## (f) Mostre a linha de mínimos quadrados no gráfico de dispersão obtido em (d).
+## Desenhe a linha de regressão de população no gráfico, em um
+## cor. Use o comando legenda () para criar uma legenda apropriada.
+
+## (g) Agora, ajuste um modelo de regressão polinomial que prevê y usando x
+## e x2. Existe evidência de que o termo quadrático melhora a
+## ajuste do modelo? Explique sua resposta.
+
+## (h) Repetir (a) - (f) após modificar o processo de geração de dados em
+## de tal forma que há menos ruído nos dados. O modelo (3,39)
+## deve permanecer o mesmo. Você pode fazer isso diminuindo a variação da distribuição normal usada para gerar o termo de erro
+## em B). Descreva seus resultados.
+
+## (i) Repetir (a) - (f) após modificar o processo de geração de dados em
+## de tal forma que há mais ruído nos dados. O modelo
+## (3.39) deve permanecer o mesmo. Você pode fazer isso aumentando
+## a variância da distribuição normal usada para gerar o
+## termo de erro em (b). Descreva seus resultados.
+
+## (j) Quais são os intervalos de confiança para β0 e β1 baseados no
+conjunto de dados original, o conjunto de dados mais ruidosos e os dados menos barulhentos
+conjunto? Comente seus resultados
+
+########################################################################
+
+## Esse problema envolve o conjunto de dados de Boston, que vimos no laboratório
+## para este capítulo. Vamos agora tentar prever a taxa de criminalidade per capita
+## usando as outras variáveis ​​neste conjunto de dados. Em outras palavras, per capita
+## taxa de criminalidade é a resposta, e as outras variáveis ​​são os preditores.
+
+## (a) Para cada preditor, ajuste um modelo de regressão linear simples para prever
+## a resposta. Descreva seus resultados. Em qual dos modelos é
+## existe uma associação estatisticamente significativa entre o preditor
+## e a resposta? Crie alguns gráficos para fazer backup de suas asserções.
+
+## (b) Ajustar um modelo de regressão múltipla para prever a resposta usando
+## todos os preditores. Descreva seus resultados. Para quais preditores
+## podemos rejeitar a hipótese nula H0: βj = 0?
+
+## (c) Como seus resultados de (a) se comparam aos seus resultados de (b)?
+## Criar um gráfico exibindo os coeficientes de regressão univariados
+## de (a) no eixo x, e os coeficientes de regressão múltipla
+## de (b) no eixo y. Ou seja, cada preditor é exibido como um
+## ponto único no enredo. Seu coeficiente em um modelo de regressão linear simples é mostrado no eixo x, e seu coeficiente estimado
+## no modelo de regressão linear múltipla é mostrado no eixo y.
+
+## (d) Existe evidência de associação não linear entre qualquer um dos
+## preditores e a resposta? Para responder a esta pergunta, para cada
+## preditor X, ajuste um modelo do formulário
+## Y = β0 + β1X + β2X2 + β3X3 +
