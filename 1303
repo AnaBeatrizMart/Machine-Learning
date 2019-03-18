@@ -1,0 +1,78 @@
+##################################
+# Bioinformática
+# Izabela Hendrix
+# Prof. Neylson Crepalde
+# Por Ana Beatriz Martins
+##################################
+
+# Importando um banco de dados embutido no r
+data ("mtcars") 
+head(mtcars)
+help(mtcars)
+
+## Vamos tentar explicar o consumo (mpg) a parir
+## do hp e do tipo am
+
+# 0 é automática, 1 é manual
+reg1 = lm(mpg ~ hp + am, data=mtcars)
+summary (reg1)
+
+# Todos deram três estrelas - bom, estatísticamente significativos
+
+# Para cada ponto a mais no poder em cavalos espera-se que o carro consuma
+# -0,05 milha por galão. 
+
+# Carros de marcha manual andam em média 5,28 milhas a mais por galão do que
+# caros de marcha automatica.
+
+## Regressão com termo interativo
+
+reg2 = lm(mpg ~ hp * am, data = mtcars)
+summary(reg2)
+
+# Marcha automatica ou manual não faz diferença no poder em cavalos no consumo
+
+install.packages("ISLR")
+library(ISLR)
+
+install.packages("dplyr")
+install.packages("readr")
+
+library(dplyr)
+library(readr)
+
+adv = read_csv("http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv")
+adv
+adv = adv %>% 
+          select (-1)
+
+head(adv)
+
+reg1=lm(sales ~ radio + newspaper, data=adv)
+summary(reg1)
+
+########################################################T
+## Regressão polinomial
+## Vamos investiga a relação entre mpg e hp
+plot(mtcars$hp, mtcars$mpg, col="pink")
+
+# Testando o modelo mpg por hp
+reg1=lm(mpg ~ hp, data=mtcars)
+summary(reg1)
+
+# O efeito foi significativo
+# Quanto maior for a potencia em cavalos menos distancia por galão o carro vai percorrer
+# 60% do consumo - Multiple R-squared:  0.6024
+
+reg2 = lm (mpg ~ hp(hp^2), data=mtcars)
+summary(reg2)
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot (mtcars, aes(x=hp, y=mpg)) +
+  geom_point ()+
+  stat_smooth(method=lm,
+             formula =  y~x+I(x^2))
+  
+plot(reg1)
+
